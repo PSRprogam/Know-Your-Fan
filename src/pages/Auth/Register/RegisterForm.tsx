@@ -101,7 +101,7 @@ export default function RegisterForm() {
   };
 
   return (
-    <div className={styles.form} onSubmit={handleSubmit}>
+    <form className={styles.form} onSubmit={handleSubmit}>
       {errorMessage && (
         <p style={{ color: "red", textAlign: "center" }}>{errorMessage}</p>
       )}
@@ -195,6 +195,6 @@ export default function RegisterForm() {
           Faça login
         </Link>
       </div>
-    </div>
+    </form>
   );
 }
