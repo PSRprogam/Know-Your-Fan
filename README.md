@@ -10,7 +10,6 @@ Este é um projeto React com TypeScript, voltado para a criação de uma aplica�
 - **Upload de Documentos**: Envio de documentos para validação, com extração de dados via OCR.
 - **Validação de Maioridade**: Verifica automaticamente se o usuário é maior de idade com base nos dados extraídos.
 - **Sistema de Pontuação**: Os fãs acumulam pontos com base em suas interações e podem subir de patente.
-- **Chatbot Interativo**: Um chatbot que permite interação direta com o sistema.
 - **Acompanhamento de Eventos**: Os fãs podem visualizar eventos e postagens do time.
 
 ---
