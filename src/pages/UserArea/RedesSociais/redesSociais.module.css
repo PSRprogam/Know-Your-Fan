@@ -1,0 +1,260 @@
+.container {
+  min-height: 100vh;
+  background-image: url("/images/bg-cs.png");
+  color: white;
+  padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: "Inter", sans-serif;
+  position: relative;
+}
+
+.overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 0;
+}
+
+.socialSection {
+  width: 100%;
+  max-width: 700px;
+  padding: 2rem;
+  margin-left: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  backdrop-filter: blur(6px);
+  border-radius: 16px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.4);
+  position: relative;
+  z-index: 1;
+}
+
+@media (max-width: 768px) {
+  .socialSection {
+    margin-left: 0;
+    padding: 1.5rem;
+  }
+}
+
+.title,h2,
+h3 {
+  color: #facc15;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: clamp(1.2rem, 5vw, 1.5rem);
+}
+
+.socialButtons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  justify-content: center;
+  margin-bottom: 2rem;
+}
+
+.socialButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+  background-color: #333333;
+}
+
+.facebook {
+  background-color: #1877f2;
+}
+
+.twitter {
+  background-color: #1da1f2;
+}
+
+.instagram {
+  background: linear-gradient(to right, #e1306c, #fd1d1d, #fcb045);
+}
+
+.socialButton:hover {
+  opacity: 0.9;
+  transform: translateY(-2px);
+}
+
+.manualForm,
+.otherLinksForm {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+}
+
+input[type="url"] {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  background-color: #1f1f1f;
+  color: white;
+  font-size: 1rem;
+  transition: border-color 0.3s;
+}
+
+input[type="url"]:focus {
+  border-color: #00ffff;
+  outline: none;
+  box-shadow: 0 0 10px rgba(0, 255, 255, 0.2);
+}
+
+.formActions {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.button,
+.cancelButton {
+  flex: 1;
+  padding: 0.75rem;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+  transition: all 0.3s ease;
+  font-size: 0.95rem;
+}
+
+.button {
+  background-color: #10b981;
+  color: white;
+}
+
+.button:hover {
+  background-color: #059669;
+  transform: translateY(-2px);
+}
+
+.cancelButton {
+  background-color: transparent;
+  color: #ccc;
+  border: 1px solid #ccc;
+}
+
+.cancelButton:hover {
+  color: white;
+  border-color: white;
+  transform: translateY(-2px);
+}
+
+.errorMessage {
+  color: #ff6b6b;
+  background-color: rgba(255, 107, 107, 0.1);
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.connectedAccounts {
+  background-color: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin-top: 1.5rem;
+}
+
+.accountList {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.accountItem {
+  background-color: rgba(255, 255, 255, 0.07);
+  border-radius: 8px;
+  padding: 1rem;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  transition: background 0.3s;
+}
+
+.accountItem:hover {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+.connectionDate {
+  font-size: 0.875rem;
+  color: #aaa;
+}
+
+.unlinkButton {
+  align-self: flex-end;
+  background-color: transparent;
+  border: none;
+  color: #f87171;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  transition: color 0.3s ease, background-color 0.2s ease;
+}
+
+.unlinkButton:hover {
+  background-color: rgba(255, 0, 0, 0.1);
+  color: #f43f5e;
+}
+
+.tiktokIcon {
+  background: white;
+  color: black;
+  font-size: 0.75rem;
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-weight: bold;
+}
+
+.spinAnimation {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 600px) {
+  .socialButtons {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .formActions {
+    flex-direction: column;
+  }
+
+  .button,
+  .cancelButton {
+    width: 100%;
+  }
+
+  .socialSection {
+    padding: 1.5rem;
+  }
+
+  h2,
+  h3 {
+    font-size: 1.2rem;
+  }
+}

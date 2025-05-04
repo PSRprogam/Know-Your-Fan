@@ -1,0 +1,292 @@
+:root {
+  --primary-color: #1a1a1a; 
+  --secondary-color: #333333; 
+  --background-light: #121212; 
+  --text-dark: #f1f1f1; 
+  --text-light: #c0c0c0; 
+  --border-radius: 12px;
+  --box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+.pageWrapper {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+  background-image: url("/images/bg-cs.png");
+}
+
+@media (max-width: 768px) {
+  .pageWrapper {
+    flex-direction: column;
+  }
+}
+
+.section {
+  flex-grow: 1;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background-color: #1f1f1f; 
+  border-radius: var(--border-radius);
+  box-shadow: var(--box-shadow);
+  margin: clamp(1rem, 3vw, 2rem) auto;
+  max-width: min(900px, 92%);
+  width: 90%;
+  overflow-x: auto;
+  font-family: "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+  margin-left: 400px;
+  padding-top: 2.5rem;
+}
+
+@media (max-width: 768px) {
+  .section {
+    margin-left: 0;
+    width: 95%;
+    max-width: 100%;
+    padding-top: 4rem;
+  }
+}
+
+.section h3 {
+  text-transform: uppercase;
+  justify-content: center;
+  flex-wrap: wrap;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: var(--text-dark); 
+}
+
+.section h3 svg {
+  width: 1.4em;
+  height: 1.4em;
+  fill: currentColor;
+}
+
+.pointsTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: clamp(0.95rem, 1.6vw, 1.05rem);
+  color: var(--text-light); 
+}
+
+.pointsTable th,
+.pointsTable td {
+  padding: 1rem 1.25rem;
+  text-align: left;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1); 
+}
+
+.pointsTable th {
+  background-color: var(--primary-color);
+  color: var(--text-dark); 
+  font-weight: 500;
+  position: sticky;
+  top: 0;
+}
+
+.pointsTable tr:not(:last-child) td {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.pointsTable tr:hover td {
+  background-color: rgba(67, 97, 238, 0.1);
+}
+
+.rankSilver {
+  color: #ffffff;
+  font-weight: 600;
+  background: none; 
+}
+
+.rankGold {
+  color: #ffffff;
+  font-weight: 600;
+  background: none; 
+}
+
+.rankPlatinum {
+  color: #ffffff;
+  font-weight: 600;
+  background: none; 
+}
+
+.rankDiamond {
+  color: #ffffff;
+  font-weight: 600;
+  background: none; 
+}
+
+.rankGlobal {
+  color: #ffffff;
+  font-weight: 600;
+  background: none; 
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 0.9;
+  }
+  50% {
+    opacity: 1;
+    text-shadow: 0 0 8px rgba(255, 87, 34, 0.6);
+  }
+  100% {
+    opacity: 0.9;
+  }
+}
+
+.progressContainer {
+  width: 100%;
+  background-color: #333333;
+  border-radius: 100px;
+  overflow: hidden;
+  height: 10px;
+  margin: 0.5rem 0;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.progressBar {
+  height: 100%;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #4cc9f0, #4361ee);
+  transition: width 0.6s cubic-bezier(0.65, 0, 0.35, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.progressBar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0.1) 0%,
+    rgba(255, 255, 255, 0.3) 50%,
+    rgba(255, 255, 255, 0.1) 100%
+  );
+  animation: shimmer 2s infinite linear;
+}
+
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  background: linear-gradient(135deg, #4cc9f0, #4361ee);
+  color: var(--text-dark); 
+  padding: 0.35rem 0.8rem;
+  border-radius: 100px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  box-shadow: 0 2px 5px rgba(67, 97, 238, 0.3);
+  transition: all 0.3s ease;
+}
+
+.badge:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(67, 97, 238, 0.4);
+}
+
+.badge svg {
+  width: 0.9em;
+  height: 0.9em;
+  margin-right: 0.3rem;
+}
+
+@media (max-width: 768px) {
+  .pointsTable thead {
+    display: none;
+  }
+
+  .pointsTable,
+  .pointsTable tbody,
+  .pointsTable tr,
+  .pointsTable td {
+    display: block;
+    width: 100%;
+  }
+
+  .pointsTable tr {
+    margin-bottom: 1.5rem;
+    border-radius: var(--border-radius);
+    padding: 1rem;
+    background-color: #1a1a1a; 
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    position: relative;
+    overflow: hidden;
+  }
+
+  .pointsTable tr::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: linear-gradient(to bottom, #4cc9f0, #4361ee);
+  }
+
+  .pointsTable td {
+    text-align: right;
+    padding: 0.5rem 0.5rem 0.5rem 50%;
+    position: relative;
+    font-size: 0.9rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .pointsTable td:last-child {
+    border-bottom: none;
+  }
+
+  .pointsTable td::before {
+    content: attr(data-label);
+    position: absolute;
+    left: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    font-weight: 600;
+    color: var(--primary-color);
+    text-align: left;
+    width: 45%;
+    padding-right: 0.5rem;
+    font-size: 0.85rem;
+  }
+
+  .progressContainer {
+    height: 8px;
+  }
+
+  .badge {
+    padding: 0.25rem 0.7rem;
+    font-size: 0.75rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .pointsTable td {
+    padding-left: 55%;
+    font-size: 0.85rem;
+  }
+
+  .pointsTable td::before {
+    font-size: 0.8rem;
+  }
+
+  .section {
+    padding: 1rem;
+    width: 98%;
+  }
+}
