@@ -40,16 +40,19 @@ export default function Home() {
       title: "CS2 MAJOR",
       description: "Acompanhe a Furia no Blast Austin Major 2025",
       image: "./images/major.jpg",
+      link:"https://www.hltv.org/major"
     },
     {
       title: "LAN PARTY",
       description: "Reveja os melhores momentos do evento presencial que marcou a história do Brasil e da Furia.",
       image: "./images/majoRio.jpg",
+      link:"https://youtu.be/VzImCLbkzL8?si=E6QXJuWNJbvEQx03"
     },
     {
       title: "MERCH DROP",
       description: "Nova coleção de camisetas FURIA já disponíveis, adquira a sua.",
       image: "./images/colecao.jpg",
+      link:"https://www.furia.gg/"
     },
   ];
 
@@ -58,11 +61,13 @@ export default function Home() {
       title: "FURIA vs The MongolZ",
       description: "10th of May 2025",
       image: "./images/pgl.jpg",
+      link:"https://www.hltv.org/matches/2382203/the-mongolz-vs-furia-pgl-astana-2025"
     },
     {
       title: "IEM DALLAS 2025",
       description: "O campeonato de milhões. May 19th - May 25th 2025",
       image: "./images/dallas.jpg",
+      link:"https://www.hltv.org/events/8037/iem-dallas-2025"
     },
   ];
 
@@ -82,6 +87,7 @@ export default function Home() {
               <h2 className={styles.sectionTitle}>Destaques</h2>
               <div className={styles.cardGrid}>
                 {destaques.map((item, i) => (
+                <a className={styles.link} target="_blank" href={item.link}>
                   <motion.div
                     className={styles.card}
                     key={i}
@@ -92,10 +98,12 @@ export default function Home() {
                     style={{ backgroundImage: `url(${item.image})`, backgroundSize: 'cover', backgroundPosition: 'center' }}
                   >
                     <div className={styles.cardOverlay}>
+                    
                       <h3>{item.title}</h3>
                       <p>{item.description}</p>
                     </div>
                   </motion.div>
+                  </a>
                 ))}
               </div>
             </section>

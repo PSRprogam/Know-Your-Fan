@@ -78,7 +78,10 @@
   text-align: center;
   text-transform: uppercase;
 }
-
+.link{
+ 
+    text-decoration: none;
+}
 .cardsSection {
   display: flex;
   flex-direction: column;
